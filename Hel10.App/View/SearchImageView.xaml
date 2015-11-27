@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="Hel10.App.View.SearchImageView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Hel10.App.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="ResultImageTPL">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Stretch="Uniform" Source="{Binding Url}"></Image>
+                <Grid Grid.Column="1" Margin="40,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Margin="0,0,0,12" Orientation="Vertical" Grid.RowSpan="2">
+                        <TextBlock Text="{Binding Nombre}" FontSize="32" Foreground="#FF4782F6"/>
+                    </StackPanel>
+                    <StackPanel Margin="0,6,0,6" Orientation="Vertical" Grid.Row="2">
+                        <TextBlock Text="Sexo" FontSize="20"/>
+                        <TextBlock Text="{Binding Sexo}" FontSize="29.333" />
+                    </StackPanel>
+                    <StackPanel Margin="0,6,0,6" Orientation="Vertical" Grid.Row="3">
+                        <TextBlock Text="Edad" FontSize="20"/>
+                        <TextBlock Text="{Binding Edad}" FontSize="29.333" />
+                    </StackPanel>
+                    <StackPanel Margin="0,6,0,6" Orientation="Vertical" Grid.Row="4">
+                        <TextBlock Text="Porcentaje de parecido" FontSize="20"/>
+                        <TextBlock Text="{Binding Similar}" FontSize="29.333"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="350" />
+        </Grid.ColumnDefinitions>
+        <GridView x:Name="GridImages" 
+                  ItemTemplate="{StaticResource ResultImageTPL}" 
+                  IsItemClickEnabled="True" />
+        <Image Source="ms-appx:///Assets/Layout/rodolfo-3000.png" Height="160" Grid.Column="1" VerticalAlignment="Top"/>
+    </Grid>
+</Page>
