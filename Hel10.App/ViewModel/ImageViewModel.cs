@@ -23,7 +23,7 @@ namespace Hel10.App.ViewModel
 
         public async Task<Face[]> GetAge()
         {
-            var faceServiceClient = new FaceServiceClient("9db608d06dd54aeaabe7ca50c9ea3834");
+            var faceServiceClient = new FaceServiceClient("keey");
             var face= await faceServiceClient.DetectAsync(this.ImageResult.Url,true,true,true,true);
             this.FacesCollection = face;
             var image = new ImageView

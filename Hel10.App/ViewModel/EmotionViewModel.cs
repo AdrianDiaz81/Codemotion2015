@@ -23,7 +23,7 @@ namespace Hel10.App.ViewModel
         public async Task<Emotion[]> GetEmotion()
         {
             try {
-                var emotionServiceClient = new EmotionServiceClient("27f1806f6cdf4720bff4f68654bbd241");
+                var emotionServiceClient = new EmotionServiceClient("keyemotio");
 
                 var emotion = await emotionServiceClient.RecognizeAsync(this.ImageResult.Url);
                 this.EmotionCollection = emotion;

@@ -24,7 +24,7 @@ namespace Hel10.App.ViewModel
         public void Search(string speechText)
         {
             this.SpeechText = speechText;
-            var searchService = new SearchService("demohelo10", "CDB98C274D37BEFF46E052983EA38BB0", "hel10");
+            var searchService = new SearchService("NOMBREdelserviciodebusqueda", "keysearch", "nombredelindice");
             this.SearchResult = searchService.Search(speechText);
         }
     }

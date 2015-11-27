@@ -24,7 +24,7 @@ namespace Hel10.App.View
 
         public async   Task  GetText()
         {
-            VisionServiceClient visionServiceClient= new VisionServiceClient("26bb354436724d939eb2f184860a0eff");
+            VisionServiceClient visionServiceClient= new VisionServiceClient("key");
 
             var result = await visionServiceClient.RecognizeTextAsync(this.item.Url);
             var sb= new StringBuilder();
